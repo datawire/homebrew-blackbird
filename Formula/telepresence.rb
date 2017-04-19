@@ -8,7 +8,7 @@ class Telepresence < Formula
 
   depends_on "python3"
   depends_on "torsocks"
-  depends_on "homebrew/fuse/sshfs"
+  depends_on "sshfs"
 
   def install
     bin.install "cli/telepresence"
