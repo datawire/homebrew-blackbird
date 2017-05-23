@@ -3,8 +3,8 @@
 class Telepresence < Formula
   desc "Local development environment attached to a remote Kubernetes cluster"
   homepage "http://telepresence.io"
-  url "https://github.com/datawire/telepresence/archive/0.46.tar.gz"
-  sha256 "3981c48d2aa23dba1b1c0222c59ee1f6976fc09f6155cdd89e701cc2592a0fed"
+  url "https://github.com/datawire/telepresence/archive/0.47.tar.gz"
+  sha256 "056bc416eb0bd45fab38f898834caefbf43314f4a4c267605242fc08b847572b"
 
   depends_on "python3"
   depends_on "torsocks"
