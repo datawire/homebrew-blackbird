@@ -3,12 +3,13 @@
 class Telepresence < Formula
   desc "Local development environment attached to a remote Kubernetes cluster"
   homepage "http://telepresence.io"
-  url "https://github.com/datawire/telepresence/archive/0.51.tar.gz"
-  sha256 "7413f767e50523871656ba2b1118c4f383b7b9912a2e4a912a4ab0dce0514b42"
+  url "https://github.com/datawire/telepresence/archive/0.52.tar.gz"
+  sha256 "48782fe4bba4e899108dccc708ce1625ea43de29ed78d08948c68c1869145a7f"
 
   depends_on "python3"
   depends_on "torsocks"
   depends_on "sshfs"
+  depends_on "socat"
 
   def install
     system "env", "PATH=#{ENV['PATH']}:/usr/local/bin", "make", "virtualenv/bin/sshuttle-telepresence"
