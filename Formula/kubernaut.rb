@@ -1,18 +1,18 @@
 # This script is generated automatically by the release automation code in the
 # Kubernaut repository:
 class Kubernaut < Formula
-  desc "Local development environment attached to a remote Kubernetes cluster"
+  desc "On-demand, ephemeral Kubernetes clusters for development and testing"
   homepage "https://github.com/datawire/kubernaut"
-  url "https://github.com/datawire/kubernaut/archive/.tar.gz"
-  sha256 "0019dfc4b32d63c1392aa264aed2253c1e0c2fb09216f8e2cc269bbfb8bb49b5"
+  url "https://github.com/datawire/kubernaut/archive/0.1.3.tar.gz"
+  sha256 "0f09acb268aee0f3400f34c3f80804f632b0b4558686e17bd4f6848ebbae59e6"
 
   depends_on "python3"
 
   def install
-    bin.install "cli/telepresence"
+    bin.install "out/kubernaut"
   end
 
   test do
-    system "telepresence", "--help"
+    system "kubernaut", "--help"
   end
 end
