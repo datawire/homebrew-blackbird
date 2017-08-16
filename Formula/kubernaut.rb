@@ -12,7 +12,7 @@ class Kubernaut < Formula
 
   def install
     venv = virtualenv_create(libexec, "python3")
-    venv.pip_install_and_link
+    venv.pip_install_and_link buildpath
   end
 
   test do
