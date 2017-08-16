@@ -11,11 +11,8 @@ class Kubernaut < Formula
   depends_on "python3"
 
   def install
-    venv = virtualenv_create(libexec)
-    system libexec/"bin/pip3", "install", "-v", "--no-binary", ":all:",
-                              "--ignore-installed", buildpath
-    system libexec/"bin/pip3", "uninstall", "-y", name
-    venv.pip_install_and_link buildpath
+    venv = virtualenv_create(libexec, "python3")
+    venv.pip_install_and_link
   end
 
   test do
