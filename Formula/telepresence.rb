@@ -3,16 +3,19 @@
 class Telepresence < Formula
   desc "Local dev environment attached to a remote Kubernetes cluster"
   homepage "https://telepresence.io"
-  url "https://github.com/datawire/telepresence/archive/0.65.tar.gz"
-  sha256 "0a439ad1ac55c7d26e8169b0ab9bde35456829eca5854c14f9092c2645442560"
+  url "https://github.com/datawire/telepresence/archive/0.67.tar.gz"
+  sha256 "706b88893f1e2ee7ed7512f5dc7d2ef8df6c1acfb5a4bf16b163683033bcdbbb"
 
   depends_on "python3"
   depends_on "torsocks" => :run
   depends_on "sshfs" => :run
 
   def install
-    system "env", "PATH=#{ENV["PATH"]}:/usr/local/bin", "make", "virtualenv/bin/sshuttle-telepresence"
+    system "python3", "-m", "venv", "virtualenv"
+    system "virtualenv/bin/python", "-m", "pip", "install", "pex"
+    system "bash", "-c", "source virtualenv/bin/activate && packaging/build-sshuttle.py"
     bin.install "cli/telepresence"
+    bin.install "cli/stamp-telepresence"
     bin.install "virtualenv/bin/sshuttle-telepresence"
   end
 
@@ -24,6 +27,7 @@ class Telepresence < Formula
 
   test do
     system "telepresence", "--help"
+    system "stamp-telepresence", "--help"
     system "sshuttle-telepresence", "--version"
   end
 end
