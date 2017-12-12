@@ -3,20 +3,20 @@
 class Telepresence < Formula
   desc "Local dev environment attached to a remote Kubernetes cluster"
   homepage "https://telepresence.io"
-  url "https://github.com/datawire/telepresence/archive/0.71.tar.gz"
-  sha256 "9e3564834984375c5db7ef9d4eb5479d209194313583a49a2f22f6d79f9b1e36"
+  url "https://github.com/datawire/telepresence/archive/0.72.tar.gz"
+  sha256 "098d49538ea5f9c9b0a608bbb687f51de0c8ac36cf397a1f49c438b44a75dc23"
 
   depends_on "python3"
   depends_on "torsocks" => :run
   depends_on "sshfs" => :run
 
+  include Language::Python::Virtualenv
+
   def install
-    system "python3", "-m", "venv", "virtualenv"
-    system "virtualenv/bin/python", "-m", "pip", "install", "pex"
-    system "bash", "-c", "source virtualenv/bin/activate && packaging/build-sshuttle.py"
-    bin.install "cli/telepresence"
-    bin.install "cli/stamp-telepresence"
-    bin.install "virtualenv/bin/sshuttle-telepresence"
+    venv = virtualenv_create(libexec, "python3")
+    venv.pip_install "git+https://github.com/datawire/sshuttle.git@telepresence"
+    bin.install libexec/"bin/sshuttle-telepresence"
+    venv.pip_install_and_link buildpath
   end
 
   def caveats; <<-EOS.undent
