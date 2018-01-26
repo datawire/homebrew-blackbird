@@ -3,8 +3,8 @@
 class Telepresence < Formula
   desc "Local dev environment attached to a remote Kubernetes cluster"
   homepage "https://telepresence.io"
-  url "https://github.com/datawire/telepresence/archive/0.73.tar.gz"
-  sha256 "14360a4125bf9f465daefe8c0ca1d90dbe3735cdd67dbb7c65964acd9d4ac917"
+  url "https://github.com/datawire/telepresence/archive/0.74.tar.gz"
+  sha256 "24309a64ff5c051070846817cf11cac6c5f24061864dd7e882a7d234179deb36"
 
   depends_on "python3"
   depends_on "torsocks" => :run
@@ -19,9 +19,10 @@ class Telepresence < Formula
     venv.pip_install_and_link buildpath
   end
 
-  def caveats; <<-EOS.undent
-    Use of the container method requires socat.
-      brew install socat
+  def caveats
+    <<~EOS
+      Use of the container method requires socat.
+        brew install socat
     EOS
   end
 
