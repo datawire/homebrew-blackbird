@@ -4,8 +4,8 @@ class Telepresence < Formula
   include Language::Python::Virtualenv
   desc "Local dev environment attached to a remote Kubernetes cluster"
   homepage "https://telepresence.io"
-  url "https://github.com/datawire/telepresence/archive/0.82.tar.gz"
-  sha256 "5c6c9d79c493a25dfb950d2af8ca011e073e766175a6a516c1e71a4bdb0fa8f3"
+  url "https://github.com/datawire/telepresence/archive/0.83.tar.gz"
+  sha256 "397a4a469f7f5e725a1e0e76b61709169fb67884808c513ea6271ee0a2b52f52"
 
   depends_on "python"
   depends_on "torsocks"
