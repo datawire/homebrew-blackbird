@@ -4,16 +4,16 @@ class Telepresence < Formula
   include Language::Python::Virtualenv
   desc "Local dev environment attached to a remote Kubernetes cluster"
   homepage "https://telepresence.io"
-  url "https://s3.amazonaws.com/datawire-static-files/telepresence/telepresence-0.93.tar.gz"
-  sha256 "d5fdc0e38bf48135db003aeb88e486ebd2f85d31b7a42a31de5f1691449db4c1"
+  url "https://s3.amazonaws.com/datawire-static-files/telepresence/telepresence-0.94.tar.gz"
+  sha256 "b607d67bb5b10ecb63a50b477aff8f1df95a35acd7e0d480181ceffc3d664d9e"
 
   depends_on "python"
   depends_on "torsocks"
   depends_on "sshfs"
 
   def install
-    bin.install "telepresence"
-    bin.install "sshuttle-telepresence"
+    bin.install "bin/telepresence"
+    libexec.install Dir["libexec/*"]
   end
 
   def caveats
@@ -25,6 +25,5 @@ class Telepresence < Formula
 
   test do
     system "#{bin}/telepresence", "--help"
-    system "#{bin}/sshuttle-telepresence", "--version"
   end
 end
