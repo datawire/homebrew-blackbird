@@ -1,6 +1,6 @@
 # This script is generated automatically by the release automation code in the
 # Telepresence repository:
-class Telepresence < Formula
+class TelepresenceLegacy < Formula
   include Language::Python::Virtualenv
   desc "Local dev environment attached to a remote Kubernetes cluster"
   homepage "https://telepresence.io"
