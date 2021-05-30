@@ -9,7 +9,7 @@ class TelepresenceLegacy < Formula
 
   depends_on "python"
   depends_on "torsocks"
-  depends_on "sshfs"
+  depends_on "gromgit/fuse/sshfs-mac"
 
   def install
     bin.install "bin/telepresence"
