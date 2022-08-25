@@ -3,8 +3,8 @@
 class Telepresence < Formula
   desc "Local dev environment attached to a remote Kubernetes cluster"
   homepage "https://telepresence.io"
-  url "https://app.getambassador.io/download/tel2/darwin/amd64/2.7.1/telepresence"
-  sha256 "e19bf778db1335b0c2a6ec687e1ecd1ee458a92d54e9191df77d1d0e20616431"
+  url "https://app.getambassador.io/download/tel2/darwin/amd64/2.7.2/telepresence"
+  sha256 "46c718e56996ba2832f11a77b6d84f5504b0034f48a49c54872e4ef83f6e99c7"
 
   # macfuse is a cask and formula can't depend on casks, so we can't actually
   # do this. This is probably fine since you don't _need_ macfuse to run
