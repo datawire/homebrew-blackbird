@@ -2,7 +2,7 @@
 # Telepresence repository:
 class Telepresence < Formula
   desc "Local dev environment attached to a remote Kubernetes cluster"
-  homepage "https://telepresence.io"
+  homepage "https://www.getambassador.io/products/telepresence"
 
   conflicts_with "telepresence"
 
@@ -13,8 +13,8 @@ class Telepresence < Formula
     #depends_on "macfuse"
 
     if Hardware::CPU.arm?
-      url "https://app.getambassador.io/download/tel2/darwin/arm64/2.20.0/telepresence"
-      sha256 "bc2c3239b382fe92340e4f2164b9600748976a17bf67212e23b505188fbd567e"
+      url "https://app.getambassador.io/download/tel2/darwin/arm64/2.20.1/telepresence"
+      sha256 "e2c13bc6eee920344dcd4d44105b8a461c8dd666c15fa2ef5e361ab64b58e560"
 
       def install
         bin.install "telepresence"
@@ -34,8 +34,8 @@ class Telepresence < Formula
       end
     end
     if Hardware::CPU.intel?
-      url "https://app.getambassador.io/download/tel2/darwin/amd64/2.20.0/telepresence"
-      sha256 "0ae0ae214f12554fc68c3c11b6366cb0b75313388baf6a40917d85642ba2ddae"
+      url "https://app.getambassador.io/download/tel2/darwin/amd64/2.20.1/telepresence"
+      sha256 "6b7aff82203ed12af176a658eba9644967f98707af5c7059914fc47b62503614"
 
       def install
         bin.install "telepresence"
@@ -58,7 +58,7 @@ class Telepresence < Formula
 
   on_linux do
     # if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    #   url "https://app.getambassador.io/download/tel2/linux/arm64/v2.20.0/telepresence"
+    #   url "https://app.getambassador.io/download/tel2/linux/arm64/v2.20.1/telepresence"
     #   sha256 "__TARBALL_HASH_LINUX_ARM64__"
 
     #   def install
@@ -78,8 +78,8 @@ class Telepresence < Formula
     #   end
     # end
     if Hardware::CPU.intel?
-      url "https://app.getambassador.io/download/tel2/linux/amd64/2.20.0/telepresence"
-      sha256 "dc1c3a1bb1d20bd4eb56eda17095a575a5e8a77e68f9da607c7319f657ac1337"
+      url "https://app.getambassador.io/download/tel2/linux/amd64/2.20.1/telepresence"
+      sha256 "ea35cde65bb7faa2122be81d9bff9161ee279170faf54af52e2abf4344dc25ba"
 
       def install
         bin.install "telepresence"
