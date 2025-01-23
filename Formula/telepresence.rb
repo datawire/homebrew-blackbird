@@ -14,7 +14,7 @@ class Telepresence < Formula
 
     if Hardware::CPU.arm?
       url "https://app.getambassador.io/download/tel2/darwin/arm64/2.20.2/telepresence"
-      sha256 "84414d6902d1e08f74bde50e3cc91135717bfda0ee1ed75616778430d476d3b8"
+      sha256 "6389abecbf35aed9009d7d2b6190d71b114d9fd5046f7cb784407348ecfe417b"
 
       def install
         bin.install "telepresence"
@@ -35,7 +35,7 @@ class Telepresence < Formula
     end
     if Hardware::CPU.intel?
       url "https://app.getambassador.io/download/tel2/darwin/amd64/2.20.2/telepresence"
-      sha256 "a425c51c4fe41c27556034be1e6dbf00d128ecbf3ef7ef3f1f7c72f9a6d835b1"
+      sha256 "d114f5a1284fe29473ec1327a6a7e26846250901e10043073ee15b1866e1ff1e"
 
       def install
         bin.install "telepresence"
@@ -79,7 +79,7 @@ class Telepresence < Formula
     # end
     if Hardware::CPU.intel?
       url "https://app.getambassador.io/download/tel2/linux/amd64/2.20.2/telepresence"
-      sha256 "0598a73299285d6f894d019dc2f3adcdf39215781dacaad0614c71ed99078d8e"
+      sha256 "6ee330bf651b4f2abc9f6683c847a580a2f04c5a16f5629e11f4e7ebcad17927"
 
       def install
         bin.install "telepresence"
