@@ -12,10 +12,10 @@ class Blackbird < Formula
 
   url "#{BASE_URL}/v#{version}/#{OPERATING_SYSTEM}/#{ARCH}"
 
-  sha256 "4eb340f31d4a03b97fe319cd9f22b31bd5fad1603bd582534bfd39cb3ca50d73" if OS.mac? && Hardware::CPU.intel?
-  sha256 "9edb89aa8cd31e07b2744212e335ca1bf1b926865c42713536378977d9469ba3" if OS.mac? && Hardware::CPU.arm?
-  sha256 "9991358dd32fc7718d0a6d3aaffd790f30810f4331077858c6f547237e0a3705" if OS.linux? && Hardware::CPU.intel?
-  sha256 "20df8c5afa960639ea789b457de332a74ca69814406c8e2ed15759dd5f76bef7" if OS.linux? && Hardware::CPU.arm?
+  sha256 "9bf7855b5cbf956621e3f22a2d9c35282e4e1423916a30493f796f31bd14399d" if OS.mac? && Hardware::CPU.intel?
+  sha256 "13e8a55f611a2f56f9e2386a42fa8c68eb45b81f27104c0c6e886e90f403c100" if OS.mac? && Hardware::CPU.arm?
+  sha256 "fbdb3a98369b17800e2a1f67cba307e5c0a2d3d0d6a8b7c12976840f433690d6" if OS.linux? && Hardware::CPU.intel?
+  sha256 "f1ae9ebc484d8d84d1004e8da03348c75fa3f7543208bfb56bf18b2f48812be2" if OS.linux? && Hardware::CPU.arm?
 
   def install
       bin.install "#{PACKAGE_NAME}" => "blackbird"
